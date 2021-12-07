@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Off Bulb</title>
+    <style>
+        img{
+                    margin: 15px;
+                    padding: 15px;
+                    /* border: 1px solid red; */
+                    height: 50%;
+                    width: 25%;
+                    margin-left: 370px;
+
+                    
+        }
+        .btn{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
+        #btn1{
+            background-color: rgb(245, 245, 39);
+        }
+        #btn2{
+            background-color: black;
+            color: white;
+        }
+        .single{
+            text-align: center;
+            padding-top: 2px;
+        }
+
+    </style>
+</head>
+<body>
+ <h1>Bulb On/Off control</h1>
+ <div class="btn">
+ <button id="btn1" onclick="On()">On</button>
+ <button  id="btn2"  onclick="Off()">Off</button> 
+ </div>
+ <div class="single">
+ <button id="OnOffBtn" onclick="toggleBulb()">ON</button>
+ </div>
+
+ <div class="container">
+<img src="/BulbOnOff/off.png" id="bulb" alt="">
+
+
+
+</div>
+
+
+<script>
+    const On = () => {
+        let imgObj=document.getElementById('bulb');
+        imgObj.setAttribute("src", "/on.png");
+
+    };
+
+    const Off = () => {
+        let imgObj=document.getElementById('bulb');
+        imgObj.setAttribute("src", "/BulbOnOff/off.png");
+    };
+
+    const toggleBulb = () => {
+        let imgObj=document.getElementById("bulb");
+        let srcValue=imgObj.getAttribute("src");
+        // console.log(srcValue);
+        let buttonObj=document.getElementById('OnOffBtn');
+        let buttonText = buttonObj.innerHTML;
+        // console.log(buttonText);
+
+
+        if(srcValue=='/BulbOnOff/off.png')
+        {
+           On();
+           buttonObj.innerHTML="Off"
+        }
+        else
+        {
+            Off();
+            buttonObj.innerHTML="On"
+        }
+    };
+</script>
+</body>
+
+
+</html>
